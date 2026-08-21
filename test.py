@@ -13,8 +13,7 @@ conn.close()
 
 @app.route("/")
 def hello_world():
-    print(__name__)
-    return "<p>Hello from china</p>"
+    return render_template("homepage.html", activeTopics=app_data.activeTopics)
     
 @app.route("/test")
 def test():

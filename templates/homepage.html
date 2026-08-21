@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <title>SUPER_ULTRA_MEGA_PROBLEM_TRACKER_5000</title>
+</head>
+<body class="w3-container">
+    <div class="w3-bar w3-black w3-margin-bottom">
+        <button class="w3-bar-item w3-button tablinks" onclick="">
+            DECKS
+        </button>
+        
+        <button class="w3-bar-item w3-button tablinks" onclick="">
+            ADD
+        </button>
+        
+        <button class="w3-bar-item w3-button tablinks" onclick="">
+            BROWSE
+        </button>
+        
+        <button class="w3-bar-item w3-button tablinks" onclick="">
+            STATS
+        </button>
+    </div>
+
+    <div id="formList" class="w3-container w3-padding-small">
+        <form action="" method="post" class="w3-container w3-card-4 w3-light-grey">
+            <div class="form-group list w3-padding-small">
+                {% for i in range(0, activeTopics|length): %}
+                <div class="w3-container w3-row form-group w3-row-padding">
+                    <div class="w3-container w3-threequarter">
+                        <label for="something" class="w3-input">{{ activeTopics[i]["topic"] }}</label>
+                    </div>
+                    <div class="w3-container w3-rest">
+                        <input type="number" step="1" value="{{ activeTopics[i]["count"] }}" class="w3-input w3-border">
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="w3-bottom" style="left: 0; right: 0; bottom: 0;">
+                <input type="submit" value="Start" class="w3-indigo w3-button w3-block w3-padding-large">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
